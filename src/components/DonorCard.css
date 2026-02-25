@@ -1,0 +1,203 @@
+/* ============================================
+   DonorCard.css
+   ============================================ */
+
+.donor-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: var(--transition);
+    animation: slideUp 0.3s ease both;
+    position: relative;
+    overflow: hidden;
+}
+
+.donor-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--red-primary), var(--red-deep));
+    opacity: 0;
+    transition: opacity 0.22s ease;
+}
+
+.donor-card:hover {
+    background: var(--bg-card-hover);
+    border-color: rgba(229, 62, 62, 0.2);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-card), var(--shadow-red);
+}
+
+.donor-card:hover::before {
+    opacity: 1;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---- Card Header ---- */
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.donor-avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--red-primary), var(--red-deep));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+    box-shadow: 0 0 10px var(--red-glow);
+}
+
+.donor-name-group {
+    flex: 1;
+}
+
+.donor-name {
+    font-size: 1.0rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.2px;
+}
+
+.donor-username {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+.blood-group-badge {
+    background: linear-gradient(135deg, var(--red-primary), var(--red-deep));
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 800;
+    padding: 5px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.3px;
+    box-shadow: 0 2px 8px var(--red-glow);
+    flex-shrink: 0;
+}
+
+/* ---- Card Body ---- */
+.card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.info-icon {
+    font-size: 1rem;
+    width: 20px;
+    text-align: center;
+    flex-shrink: 0;
+    opacity: 0.8;
+}
+
+/* ---- Availability Badge ---- */
+.availability-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.availability-badge.available {
+    background: var(--green-bg);
+    color: var(--green);
+    border: 1px solid rgba(72, 187, 120, 0.25);
+}
+
+.availability-badge.unavailable {
+    background: var(--yellow-bg);
+    color: var(--yellow);
+    border: 1px solid rgba(236, 201, 75, 0.25);
+}
+
+.availability-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.availability-badge.available .availability-dot {
+    animation: blink 1.4s ease-in-out infinite;
+}
+
+/* ---- Request Button ---- */
+.request-btn {
+    width: 100%;
+    padding: 12px 20px;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 0.88rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.request-btn.idle {
+    background: linear-gradient(135deg, var(--red-primary), var(--red-deep));
+    color: white;
+    box-shadow: 0 4px 14px var(--red-glow);
+}
+
+.request-btn.idle:hover {
+    background: linear-gradient(135deg, #fc4e4e, var(--red-primary));
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px var(--red-glow);
+}
+
+.request-btn.idle:active {
+    transform: translateY(0);
+}
+
+.request-btn.sent {
+    background: rgba(72, 187, 120, 0.1);
+    color: var(--green);
+    border: 1px solid rgba(72, 187, 120, 0.3);
+    cursor: default;
+}

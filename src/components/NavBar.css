@@ -1,0 +1,118 @@
+/* ============================================
+   NavBar.css
+   ============================================ */
+
+.navbar {
+    background: linear-gradient(135deg, #1a0505 0%, #160808 50%, #1a0a0a 100%);
+    border-bottom: 1px solid rgba(229, 62, 62, 0.15);
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+.navbar-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ---- Brand ---- */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+}
+
+.navbar-logo {
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, var(--red-primary), var(--red-deep));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    box-shadow: 0 0 16px var(--red-glow);
+    flex-shrink: 0;
+    animation: pulse-logo 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse-logo {
+
+    0%,
+    100% {
+        box-shadow: 0 0 16px var(--red-glow);
+    }
+
+    50% {
+        box-shadow: 0 0 30px var(--red-glow), 0 0 50px rgba(229, 62, 62, 0.1);
+    }
+}
+
+.navbar-title {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.navbar-title h1 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.3px;
+    line-height: 1;
+}
+
+.navbar-title span {
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    letter-spacing: 0.3px;
+}
+
+/* ---- Badge ---- */
+.navbar-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--red-ultra-light);
+    border: 1px solid rgba(229, 62, 62, 0.2);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--red-light);
+}
+
+.navbar-badge-dot {
+    width: 7px;
+    height: 7px;
+    background: var(--red-primary);
+    border-radius: 50%;
+    animation: blink 1.4s ease-in-out infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-badge {
+        display: none;
+    }
+}

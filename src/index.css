@@ -1,0 +1,91 @@
+/* ============================================
+   COMMUNITY BLOOD DONOR FINDER – Global CSS
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Color Palette */
+  --red-primary: #e53e3e;
+  --red-deep: #c53030;
+  --red-light: #feb2b2;
+  --red-glow: rgba(229, 62, 62, 0.25);
+  --red-ultra-light: rgba(229, 62, 62, 0.08);
+
+  /* Dark Theme */
+  --bg-dark: #0d0d0f;
+  --bg-card: #1a1a1f;
+  --bg-card-hover: #22222a;
+  --bg-input: #16161c;
+  --border: rgba(255, 255, 255, 0.07);
+  --border-hover: rgba(229, 62, 62, 0.4);
+
+  /* Text */
+  --text-primary: #f0f0f2;
+  --text-secondary: #a0a0b0;
+  --text-muted: #606070;
+
+  /* Status */
+  --green: #48bb78;
+  --green-bg: rgba(72, 187, 120, 0.12);
+  --yellow: #ecc94b;
+  --yellow-bg: rgba(236, 201, 75, 0.12);
+
+  /* Spacing & Radii */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+
+  /* Shadows */
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-red: 0 0 20px var(--red-glow);
+
+  /* Transitions */
+  --transition: all 0.22s ease;
+}
+
+/* ---- Reset ---- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--red-primary);
+  border-radius: 3px;
+}
+
+/* ---- Utility ---- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
